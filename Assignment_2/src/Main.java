@@ -1,4 +1,4 @@
-void main() {
+void main(String[] args) {
     MyList<Integer> da_array = new MyArrayList<>();
 
     for (int i = 0; i < 8; i++) {
@@ -19,28 +19,47 @@ void main() {
 //    System.out.println(da_array.getFirst());
 //    System.out.println(da_array.getLast());
 
-    System.out.println();
+//    System.out.println();
+//
+//    da_array.remove(3);
+//
+//    System.out.println(da_array.size());
+//    System.out.println(da_array.getCapacity());
+//
+//    System.out.println();
+//    for (Integer num : da_array) {
+//        System.out.println(num);
+//    }
+//
+//    da_array.removeFirst();
+//    da_array.removeLast();
+//
+//    System.out.println();
+//    System.out.println(da_array.size());
+//    System.out.println(da_array.getCapacity());
+//
+//    System.out.println();
+//    for (Integer num : da_array) {
+//        System.out.println(num);
+//    }
 
-    da_array.remove(3);
-
-    System.out.println(da_array.size());
-    System.out.println(da_array.getCapacity());
-
-    System.out.println();
-    for (Integer num : da_array) {
-        System.out.println(num);
+    MyList<Integer> array = new MyLinkedList<>();
+    for (int i = 0; i < 10; i++){
+        array.add(i);
+    }
+    for (Integer elem : array){
+        System.out.println(elem);
     }
 
-    da_array.removeFirst();
-    da_array.removeLast();
-
     System.out.println();
-    System.out.println(da_array.size());
-    System.out.println(da_array.getCapacity());
+    array.set(3, 10);
+    array.add(5, 100);
+    array.remove(8);
+    array.removeFirst();
+    array.removeLast();
 
-    System.out.println();
-    for (Integer num : da_array) {
-        System.out.println(num);
+    for (Integer elem : array){
+        System.out.println(elem);
     }
 }
 

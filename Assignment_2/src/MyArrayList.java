@@ -84,7 +84,7 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new MyIterator();
+        return new MyIterator(){};
     }
 
     private class MyIterator implements Iterator<T> {
