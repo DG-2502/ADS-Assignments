@@ -43,22 +43,51 @@ void main(String[] args) {
 //        System.out.println(num);
 //    }
 
-    MyList<Integer> array = new MyLinkedList<>();
-    for (int i = 0; i < 10; i++){
-        array.add(i);
-    }
-    for (Integer elem : array){
+//    MyList<Integer> array = new MyLinkedList<>();
+//    for (int i = 0; i < 10; i++) {
+//        array.add(i);
+//    }
+//    for (Integer elem : array) {
+//        System.out.println(elem);
+//    }
+//
+//    System.out.println();
+//    array.set(3, 10);
+//    try {
+//        array.add(15, 100);
+//    } catch (IndexOutOfBoundsException e) {
+//        array.add(5, 100);
+//    }
+//    array.remove(8);
+//    array.removeFirst();
+//    array.removeLast();
+//
+//    for (Integer elem : array) {
+//        System.out.println(elem);
+//    }
+
+//    MyStack<Integer> stack = new MyStack<>();
+//
+//    System.out.println(stack.isEmpty());
+//    System.out.println(stack.size());
+//    stack.push(10);
+//    System.out.println(stack.size());
+//    System.out.println(stack.top());
+//    stack.pop();
+//    System.out.println(stack.isEmpty());
+
+    MyList<Integer> array = new MyArrayList<>();
+    array.add(10);
+    array.add(10);
+    array.add(10);
+    array.add(10);
+    for (Integer elem : array) {
         System.out.println(elem);
     }
-
-    System.out.println();
-    array.set(3, 10);
-    array.add(5, 100);
-    array.remove(8);
-    array.removeFirst();
-    array.removeLast();
-
-    for (Integer elem : array){
+    System.out.println(array.size());
+    array.clear();
+    System.out.println(array.size());
+    for (Integer elem : array) {
         System.out.println(elem);
     }
 }

@@ -83,6 +83,11 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
+    public void clear() {
+        size = 0;
+    }
+
+    @Override
     public Iterator<T> iterator() {
         return new MyIterator(){};
     }

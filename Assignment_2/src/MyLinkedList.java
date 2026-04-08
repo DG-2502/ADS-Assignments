@@ -8,6 +8,12 @@ public class MyLinkedList<T> implements MyList<T> {
     public MyLinkedList() {
     }
 
+    private void checkIndex(int index){
+        if (index > size) {
+            throw new IndexOutOfBoundsException("Index is too big");
+        }
+    }
+
     @Override
     public void add(T item) {
         MyNode<T> newNode = new MyNode<>(item);
@@ -32,6 +38,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void add(int index, T item) {
+        checkIndex(index);
         MyNode<T> newMode = new MyNode<>(item);
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
@@ -59,6 +66,8 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public T get(int index) {
+        checkIndex(index);
+
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
@@ -99,6 +108,11 @@ public class MyLinkedList<T> implements MyList<T> {
         tail = tail.prev;
         tail.next = null;
         size--;
+    }
+
+    @Override
+    public void clear() {
+
     }
 
     @Override

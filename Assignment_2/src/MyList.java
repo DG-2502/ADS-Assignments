@@ -16,7 +16,7 @@ public interface MyList<T> extends Iterable<T>{
 //    int lasIndexOf(Object object);
 //    boolean exists(Object object);
 //    public Object[] toArray();
-//    void clear();
+    void clear();
     /**
      *get the size of the array
      */
