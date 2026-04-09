@@ -19,6 +19,12 @@ public class MyArrayList<T> implements MyList<T> {
         data = data2;
     }
 
+    private void checkIndex(int index) {
+        if (index > size) {
+            throw new IndexOutOfBoundsException("Index is too big");
+        }
+    }
+
     @Override
     public void add(T item) {
         if (size == capacity) {
@@ -29,11 +35,13 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public void set(int index, T item) {
+        checkIndex(index);
         data[index] = item;
     }
 
     @Override
     public void add(int index, T item) {
+        checkIndex(index);
         if (size == capacity) {
             increaseBuffer();
         }
@@ -66,6 +74,7 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public void remove(int index) {
+        checkIndex(index);
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
@@ -85,6 +94,7 @@ public class MyArrayList<T> implements MyList<T> {
     @Override
     public void clear() {
         size = 0;
+        data = new Object[capacity];
     }
 
     @Override

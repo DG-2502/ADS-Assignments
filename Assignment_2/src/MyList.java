@@ -21,5 +21,4 @@ public interface MyList<T> extends Iterable<T>{
      *get the size of the array
      */
     int size();
-    int getCapacity();
 }

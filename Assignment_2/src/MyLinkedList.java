@@ -8,7 +8,7 @@ public class MyLinkedList<T> implements MyList<T> {
     public MyLinkedList() {
     }
 
-    private void checkIndex(int index){
+    private void checkIndex(int index) {
         if (index > size) {
             throw new IndexOutOfBoundsException("Index is too big");
         }
@@ -29,6 +29,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void set(int index, T item) {
+        checkIndex(index);
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
@@ -87,6 +88,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void remove(int index) {
+        checkIndex(index);
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
@@ -99,7 +101,9 @@ public class MyLinkedList<T> implements MyList<T> {
     @Override
     public void removeFirst() {
         head = head.next;
-        head.prev = null;
+        if (head != null) {
+            head.prev = null;
+        }
         size--;
     }
 
@@ -112,7 +116,8 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void clear() {
-
+        head = tail = null;
+        size = 0;
     }
 
     @Override
@@ -121,13 +126,8 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     @Override
-    public int getCapacity() {
-        return 0; // REMOVE ===================================================
-    }
-
-    @Override
     public Iterator<T> iterator() {
-        return new MyIterator(){};
+        return new MyIterator();
     }
 
     private class MyIterator implements Iterator<T> {

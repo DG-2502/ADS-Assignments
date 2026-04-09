@@ -76,20 +76,39 @@ void main(String[] args) {
 //    stack.pop();
 //    System.out.println(stack.isEmpty());
 
-    MyList<Integer> array = new MyArrayList<>();
-    array.add(10);
-    array.add(10);
-    array.add(10);
-    array.add(10);
-    for (Integer elem : array) {
-        System.out.println(elem);
-    }
-    System.out.println(array.size());
-    array.clear();
-    System.out.println(array.size());
-    for (Integer elem : array) {
-        System.out.println(elem);
-    }
+//    MyList<Integer> array = new MyArrayList<>();
+//    array.add(10);
+//    array.add(10);
+//    array.add(10);
+//    array.add(10);
+//    for (Integer elem : array) {
+//        System.out.println(elem);
+//    }
+//    System.out.println(array.size());
+//    array.clear();
+//    System.out.println(array.size());
+//    for (Integer elem : array) {
+//        System.out.println(elem);
+//    }
+
+    MyQueue<Integer> queue = new MyQueue<>();
+
+    System.out.println(queue.isEmpty());
+    System.out.println(queue.size());
+    queue.push(10);
+    queue.push(120);
+    queue.push(1202);
+    System.out.println(queue.size());
+    System.out.println(queue.front());
+    System.out.println(queue.back());
+    queue.pop();
+    System.out.println(queue.front());
+    System.out.println(queue.back());
+    System.out.println(queue.isEmpty());
+    queue.pop();
+    queue.pop();
+    System.out.println(queue.size());
+    System.out.println(queue.isEmpty());
 }
 
 
