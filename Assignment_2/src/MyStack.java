@@ -1,5 +1,5 @@
 public class MyStack<T> {
-    private MyList<T> data = new MyArrayList<>();
+    private MyList<T> data = new MyLinkedList<>();
 
     public MyStack() {
     }
@@ -20,7 +20,7 @@ public class MyStack<T> {
         return data.size();
     }
 
-    public T top() {
+    public T peek() {
         return data.getLast();
     }
 }

@@ -4,20 +4,16 @@ public class MyQueue<T> {
     public MyQueue() {
     }
 
-    public void push(T item) {
+    public void enqueue(T item) {
         data.add(item);
     }
 
-    public void pop() {
+    public void dequeue() {
         data.removeFirst();
     }
 
-    public T front() {
+    public T peek() {
         return data.getFirst();
-    }
-
-    public T back() {
-        return data.getLast();
     }
 
     public boolean isEmpty(){

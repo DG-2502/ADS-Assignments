@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyArrayList<T> implements MyList<T> {
     private Object[] data;
@@ -90,6 +91,41 @@ public class MyArrayList<T> implements MyList<T> {
     public void removeLast() {
         remove(size - 1);
     }
+
+//    @Override
+//    public int indexOf(Object object) {
+//        int index = 0;
+//        for(Object elem : data){
+//            if (elem == object) {
+//                return index;
+//            }
+//            index ++;
+//        }
+//
+//        throw new NoSuchElementException("No element");
+//    }
+//
+//    @Override
+//    public int lasIndexOf(Object object) {
+//        int ind = size - 1;
+//        for(int index = ind; index > 0; index--){
+//            if (data[index] == object) {
+//                return index;
+//            }
+//        }
+//
+//        throw new NoSuchElementException("No element");
+//    }
+//
+//    @Override
+//    public boolean exists(Object object) {
+//        return false;
+//    }
+//
+//    @Override
+//    public Object[] toArray() {
+//        return new Object[0];
+//    }
 
     @Override
     public void clear() {

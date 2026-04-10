@@ -91,24 +91,65 @@ void main(String[] args) {
 //        System.out.println(elem);
 //    }
 
-    MyQueue<Integer> queue = new MyQueue<>();
+//    MyQueue<Integer> queue = new MyQueue<>();
+//
+//    System.out.println(queue.isEmpty());
+//    System.out.println(queue.size());
+//    queue.push(10);
+//    queue.push(120);
+//    queue.push(1202);
+//    System.out.println(queue.size());
+//    System.out.println(queue.front());
+//    System.out.println(queue.back());
+//    queue.pop();
+//    System.out.println(queue.front());
+//    System.out.println(queue.back());
+//    System.out.println(queue.isEmpty());
+//    queue.pop();
+//    queue.pop();
+//    System.out.println(queue.size());
+//    System.out.println(queue.isEmpty());
 
-    System.out.println(queue.isEmpty());
-    System.out.println(queue.size());
-    queue.push(10);
-    queue.push(120);
-    queue.push(1202);
-    System.out.println(queue.size());
-    System.out.println(queue.front());
-    System.out.println(queue.back());
-    queue.pop();
-    System.out.println(queue.front());
-    System.out.println(queue.back());
-    System.out.println(queue.isEmpty());
-    queue.pop();
-    queue.pop();
-    System.out.println(queue.size());
-    System.out.println(queue.isEmpty());
+    MyMinHeap<Integer> heap = new MyMinHeap<>();
+    heap.insert(9);
+    heap.insert(20);
+    heap.insert(15);
+    heap.insert(1);
+    heap.insert(3);
+    heap.insert(10);
+    heap.insert(9);
+    heap.insert(5);
+    heap.insert(23);
+    heap.insert(13);
+    heap.insert(14);
+    heap.insert(13);
+    heap.insert(15);
+    heap.insert(19);
+
+    MyList<Integer> array = heap.toArray();
+    for (Integer elem : array){
+        System.out.println(elem);
+    }
+    System.out.println();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+    heap.extractMin();
+
+    array = heap.toArray();
+    for (Integer elem : array){
+        System.out.println(elem);
+    }
 }
 
 
