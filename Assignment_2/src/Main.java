@@ -43,26 +43,26 @@ void main(String[] args) {
 //        System.out.println(num);
 //    }
 
-//    MyList<Integer> array = new MyLinkedList<>();
+//    MyList<Integer> queue = new MyLinkedList<>();
 //    for (int i = 0; i < 10; i++) {
-//        array.add(i);
+//        queue.add(i);
 //    }
-//    for (Integer elem : array) {
+//    for (Integer elem : queue) {
 //        System.out.println(elem);
 //    }
 //
 //    System.out.println();
-//    array.set(3, 10);
+//    queue.set(3, 10);
 //    try {
-//        array.add(15, 100);
+//        queue.add(15, 100);
 //    } catch (IndexOutOfBoundsException e) {
-//        array.add(5, 100);
+//        queue.add(5, 100);
 //    }
-//    array.remove(8);
-//    array.removeFirst();
-//    array.removeLast();
+//    queue.remove(8);
+//    queue.removeFirst();
+//    queue.removeLast();
 //
-//    for (Integer elem : array) {
+//    for (Integer elem : queue) {
 //        System.out.println(elem);
 //    }
 
@@ -76,18 +76,18 @@ void main(String[] args) {
 //    stack.pop();
 //    System.out.println(stack.isEmpty());
 
-//    MyList<Integer> array = new MyArrayList<>();
-//    array.add(10);
-//    array.add(10);
-//    array.add(10);
-//    array.add(10);
-//    for (Integer elem : array) {
+//    MyList<Integer> queue = new MyArrayList<>();
+//    queue.add(10);
+//    queue.add(10);
+//    queue.add(10);
+//    queue.add(10);
+//    for (Integer elem : queue) {
 //        System.out.println(elem);
 //    }
-//    System.out.println(array.size());
-//    array.clear();
-//    System.out.println(array.size());
-//    for (Integer elem : array) {
+//    System.out.println(queue.size());
+//    queue.clear();
+//    System.out.println(queue.size());
+//    for (Integer elem : queue) {
 //        System.out.println(elem);
 //    }
 
@@ -110,44 +110,87 @@ void main(String[] args) {
 //    System.out.println(queue.size());
 //    System.out.println(queue.isEmpty());
 
-    MyMinHeap<Integer> heap = new MyMinHeap<>();
-    heap.insert(9);
-    heap.insert(20);
-    heap.insert(15);
-    heap.insert(1);
-    heap.insert(3);
-    heap.insert(10);
-    heap.insert(9);
-    heap.insert(5);
-    heap.insert(23);
-    heap.insert(13);
-    heap.insert(14);
-    heap.insert(13);
-    heap.insert(15);
-    heap.insert(19);
+//    MyMinHeap<Integer> heap = new MyMinHeap<>();
+//    heap.insert(9);
+//    heap.insert(20);
+//    heap.insert(15);
+//    heap.insert(1);
+//    heap.insert(3);
+//    heap.insert(10);
+//    heap.insert(9);
+//    heap.insert(5);
+//    heap.insert(23);
+//    heap.insert(13);
+//    heap.insert(14);
+//    heap.insert(13);
+//    heap.insert(15);
+//    heap.insert(19);
+//
+//    MyList<Integer> queue = heap.toArray();
+//    for (Integer elem : queue){
+//        System.out.println(elem);
+//    }
+//    System.out.println();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//    heap.extractMin();
+//
+//    queue = heap.toArray();
+//    for (Integer elem : queue){
+//        System.out.println(elem);
+//    }
+//
+//    MyList<Integer> array = new MyArrayList<>();
+//    array.add(10);
+//    array.add(11);
+//    array.add(12);
+//    array.add(10);
+//
+//    System.out.println(array.indexOf(10));
+//    System.out.println(array.lastIndexOf(10));
+//    System.out.println(array.exists(10));
+//    System.out.println(array.exists(13));
+//    Object[] ar = array.toArray();
+//    for (Object elem : ar){
+//        System.out.println(elem);
+//    }
+//    array.sort();
+//    ar = array.toArray();
+//    System.out.println();
+//    for (Object elem : ar){
+//        System.out.println(elem);
+//    }
 
-    MyList<Integer> array = heap.toArray();
-    for (Integer elem : array){
+    MyList<Integer> queue = new MyLinkedList<>();
+    queue.add(10);
+    queue.add(11);
+    queue.add(12);
+    queue.add(10);
+
+    System.out.println(queue.indexOf(10));
+    System.out.println(queue.lastIndexOf(10));
+    System.out.println(queue.exists(10));
+    System.out.println(queue.exists(13));
+    Object[] arr = queue.toArray();
+    for (Object elem : arr){
         System.out.println(elem);
     }
-    System.out.println();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
-    heap.extractMin();
 
-    array = heap.toArray();
-    for (Integer elem : array){
+    queue.sort();
+    arr = queue.toArray();
+    System.out.println();
+    for (Object elem : arr){
         System.out.println(elem);
     }
 }

@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> head;
@@ -66,6 +67,11 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     @Override
+    public void addLast(T item) {
+        add(item);
+    }
+
+    @Override
     public T get(int index) {
         checkIndex(index);
 
@@ -112,6 +118,76 @@ public class MyLinkedList<T> implements MyList<T> {
         tail = tail.prev;
         tail.next = null;
         size--;
+    }
+
+    @Override
+    public void sort() {
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size - i - 1; j++) {
+                if (get(j).hashCode() > get(j + 1).hashCode()) {
+                    T temp = get(j);
+                    set(j, get(j + 1));
+                    set(j + 1, temp);
+                }
+            }
+        }
+    }
+
+    @Override
+    public int indexOf(Object object) {
+        int index = 0;
+        MyIterator iterator = new MyIterator();
+        while (iterator.hasNext()) {
+            T elem = iterator.next();
+            if (elem == object) {
+                return index;
+            }
+            index++;
+        }
+
+        throw new NoSuchElementException("No element");
+    }
+
+    @Override
+    public int lastIndexOf(Object object) {
+        int ind = -1;
+        int index = 0;
+        MyIterator iterator = new MyIterator();
+        while (iterator.hasNext()) {
+            T elem = iterator.next();
+            if (elem == object) {
+                ind = index;
+            }
+            index++;
+        }
+        if (ind == -1) {
+            throw new NoSuchElementException("No element");
+        }
+        return ind;
+    }
+
+    @Override
+    public boolean exists(Object object) {
+        MyIterator iterator = new MyIterator();
+        while (iterator.hasNext()) {
+            T elem = iterator.next();
+            if (elem == object) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Object[] toArray() {
+        Object[] array = new Object[size];
+        MyIterator iterator = new MyIterator();
+        int index = 0;
+        while (iterator.hasNext()) {
+            array[index] = iterator.next();
+            index++;
+        }
+        return array;
     }
 
     @Override

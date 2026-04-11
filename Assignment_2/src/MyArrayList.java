@@ -59,6 +59,11 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
+    public void addLast(T item) {
+        add(item);
+    }
+
+    @Override
     public T get(int index) {
         return (T) data[index];
     }
@@ -92,40 +97,62 @@ public class MyArrayList<T> implements MyList<T> {
         remove(size - 1);
     }
 
-//    @Override
-//    public int indexOf(Object object) {
-//        int index = 0;
-//        for(Object elem : data){
-//            if (elem == object) {
-//                return index;
-//            }
-//            index ++;
-//        }
-//
-//        throw new NoSuchElementException("No element");
-//    }
-//
-//    @Override
-//    public int lasIndexOf(Object object) {
-//        int ind = size - 1;
-//        for(int index = ind; index > 0; index--){
-//            if (data[index] == object) {
-//                return index;
-//            }
-//        }
-//
-//        throw new NoSuchElementException("No element");
-//    }
-//
-//    @Override
-//    public boolean exists(Object object) {
-//        return false;
-//    }
-//
-//    @Override
-//    public Object[] toArray() {
-//        return new Object[0];
-//    }
+    @Override
+    public void sort() {
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size - i - 1; j++) {
+                if (data[j].hashCode() > data[j + 1].hashCode()) {
+                    Object temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    @Override
+    public int indexOf(Object object) {
+        int index = 0;
+        for (Object elem : data) {
+            if (elem == object) {
+                return index;
+            }
+            index++;
+        }
+
+        throw new NoSuchElementException("No element");
+    }
+
+    @Override
+    public int lastIndexOf(Object object) {
+        int ind = -1;
+        int index = 0;
+        for (Object elem : data) {
+            if (elem == object) {
+                ind = index;
+            }
+            index++;
+        }
+        if (ind == -1) {
+            throw new NoSuchElementException("No element");
+        }
+        return ind;
+    }
+
+    @Override
+    public boolean exists(Object object) {
+        for (Object elem : data) {
+            if (elem == object) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Object[] toArray() {
+        return data;
+    }
 
     @Override
     public void clear() {
@@ -135,7 +162,8 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new MyIterator(){};
+        return new MyIterator() {
+        };
     }
 
     private class MyIterator implements Iterator<T> {
@@ -153,11 +181,8 @@ public class MyArrayList<T> implements MyList<T> {
             return next;
         }
     }
+
     public int size() {
         return size;
-    }
-
-    public int getCapacity() {
-        return capacity;
     }
 }
