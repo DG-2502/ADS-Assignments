@@ -15,6 +15,10 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    /**
+     * Add element to the list
+     * @param item
+     */
     @Override
     public void add(T item) {
         MyNode<T> newNode = new MyNode<>(item);
